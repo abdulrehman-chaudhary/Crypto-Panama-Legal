@@ -7,6 +7,10 @@
   font-family: "Raleway";
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --primary-purple: rgba(106, 27, 154, 1);
   --primary-white: rgba(255, 255, 255, 1);
@@ -52,7 +56,7 @@
 }
 
 .nav-links li a::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 2px;
@@ -95,6 +99,10 @@
     width: 90%;
   }
 
+  .thelogo {
+    width: 70%;
+  }
+
   .nav-links {
     gap: 35px;
   }
@@ -107,7 +115,7 @@
   }
 
   .thelogo {
-    width: 90%;
+    width: 60%;
   }
 
   .nav-links {
@@ -139,12 +147,17 @@
   }
 
   .thelogo {
-    width: 90%;
+    width: 50%;
   }
 
   .nav-links,
   .nav-cta {
     display: none;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
   }
 }
 
@@ -163,8 +176,13 @@
     display: none;
   }
 
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
   .thelogo {
-    width: 80%;
+    width: 40%;
   }
 }
 
@@ -188,7 +206,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 5px;
 }
 
 .os-subtitle {
@@ -355,8 +373,7 @@
   }
 
   .os-header {
-    gap: 20px;
-    padding-bottom: 20px;
+    gap: 5px;
   }
 
   .os-title {
@@ -375,6 +392,7 @@
 
   .os-child {
     width: 92%;
+    gap: 20px;
   }
 
   .os-grid {
@@ -388,7 +406,7 @@
   }
 
   .os-header {
-    gap: 15px;
+    gap: 5px;
   }
 
   .os-title {
@@ -479,6 +497,15 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
+}
+
+.cta-child {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.cta-child:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(106, 27, 154, 0.5);
 }
 
 .cta-header {
@@ -633,10 +660,24 @@
   font-size: 18px;
   font-weight: 400;
   transition: opacity 0.3s ease;
+  line-height: 100%;
+  position: relative;
+  transition: opacity 0.3s ease;
 }
 
-.footer-nav li a:hover {
-  opacity: 0.7;
+.footer-nav li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--primary-purple);
+  transition: width 0.3s ease-in-out;
+}
+
+.footer-nav li a:hover::after {
+  width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -769,5 +810,23 @@
 @media (min-width: 768px) {
   .mobile-sidebar {
     display: none;
+  }
+}
+
+@media (max-width: 425px) {
+  .sidebar-links li a {
+    font-size: 18px;
+  }
+
+  .sidebar-links {
+    gap: 18px;
+  }
+
+  .sidebar-content {
+    gap: 18px;
+  }
+
+  .btn-contact-sidebar {
+    font-size: 13px;
   }
 }

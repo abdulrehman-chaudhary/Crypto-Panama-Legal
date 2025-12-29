@@ -7,6 +7,10 @@
   font-family: "Raleway";
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --primary-purple: rgba(106, 27, 154, 1);
   --primary-white: rgba(255, 255, 255, 1);
@@ -52,7 +56,7 @@
 }
 
 .nav-links li a::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 2px;
@@ -95,6 +99,10 @@
     width: 90%;
   }
 
+  .thelogo {
+    width: 70%;
+  }
+
   .nav-links {
     gap: 35px;
   }
@@ -107,7 +115,7 @@
   }
 
   .thelogo {
-    width: 90%;
+    width: 60%;
   }
 
   .nav-links {
@@ -139,7 +147,7 @@
   }
 
   .thelogo {
-    width: 90%;
+    width: 50%;
   }
 
   .nav-links,
@@ -174,7 +182,7 @@
   }
 
   .thelogo {
-    width: 80%;
+    width: 40%;
   }
 }
 
@@ -263,10 +271,24 @@
   font-size: 18px;
   font-weight: 400;
   transition: opacity 0.3s ease;
+  line-height: 100%;
+  position: relative;
+  transition: opacity 0.3s ease;
 }
 
-.footer-nav li a:hover {
-  opacity: 0.7;
+.footer-nav li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--primary-purple);
+  transition: width 0.3s ease-in-out;
+}
+
+.footer-nav li a:hover::after {
+  width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -326,7 +348,7 @@
   width: 100%;
   padding: 22px 20px;
   border: 1px solid var(--secondary-light);
-  border-radius: 50px;
+  border-radius: 25px;
   font-family: var(--font-lato);
   font-size: 16px;
   color: var(--secondary-light-dark);
@@ -355,12 +377,12 @@
 .cf-submit-btn {
   background-color: var(--primary-purple);
   color: var(--primary-white);
-  padding: 18px 24px;
+  padding: 15px 35px;
   border: none;
-  border-radius: 18px;
+  border-radius: 10px;
   font-family: var(--font-lato);
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 400;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -402,6 +424,7 @@
 
   .cf-input {
     padding: 18px 20px;
+    border-radius: 25px;
   }
 }
 
@@ -423,6 +446,7 @@
   .cf-input {
     padding: 15px 15px;
     font-size: 15px;
+    
   }
 
   .cf-textarea {
@@ -553,5 +577,23 @@
 @media (min-width: 768px) {
   .mobile-sidebar {
     display: none;
+  }
+}
+
+@media (max-width: 425px) {
+  .sidebar-links li a {
+    font-size: 18px;
+  }
+
+  .sidebar-links {
+    gap: 18px;
+  }
+
+  .sidebar-content {
+    gap: 18px;
+  }
+
+  .btn-contact-sidebar {
+    font-size: 13px;
   }
 }
